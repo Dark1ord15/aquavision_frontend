@@ -1,0 +1,32 @@
+/* Импорт Tailwind CSS - утилитарного CSS-фреймворка */
+@import "tailwindcss";
+
+/* 
+ * Кастомизация стилей для иконки календаря в input типа datetime-local
+ * Применяется только для браузеров на движке WebKit (Chrome, Safari, Edge)
+ */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  /* 
+   * Изменение цвета иконки через CSS-фильтры:
+   * - invert: инверсия цвета (58%)
+   * - sepia: эффект сепии (40%)
+   * - saturate: насыщенность (548%)
+   * - hue-rotate: поворот цветового тона (134deg)
+   * - brightness: яркость (89%)
+   * - contrast: контрастность (89%)
+   * В результате получаем сине-зеленый оттенок (#66FCF1)
+   */
+  filter: invert(58%) sepia(40%) saturate(548%) hue-rotate(134deg) brightness(89%) contrast(89%);
+  
+  /* Прозрачность иконки */
+  opacity: 0.9;
+  
+  /* Изменение курсора при наведении */
+  cursor: pointer;
+}
+
+/* Стили для состояния hover (наведения) на иконку календаря */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  /* Увеличение непрозрачности при наведении */
+  opacity: 1;
+}
